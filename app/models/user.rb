@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :name, presence: true
-  
+  hasmany :room_users
+  hasmany :rooms, through: :room_users
 end
